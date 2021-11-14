@@ -1,0 +1,79 @@
+<html>
+
+
+<script type="text/javascript">
+	function myfunction1(){
+		document.getElementById("line1").innerHTML="You can click on the button to see who my friends are.";
+		document.getElementById("bt1").style.visibility = 'visible';
+	}
+	function myfunction2(){
+		document.getElementById("line1").innerHTML="You may choose to believe me.";
+		document.getElementById("bt1").style.visibility = 'hidden';
+		document.getElementById("Z").style.visibility = 'hidden';
+		document.getElementById("bt2").style.visibility = 'hidden';
+		document.getElementById("bt3").style.visibility = 'hidden';
+	}
+</script>
+
+
+<body>
+</br>
+<center><h1>
+Here, I'll introduce my friends.
+</h1></center>
+
+
+
+<p>Good friends offer to help in a crisis.</p>
+<p>And great friends don't take no for an answer.</p>
+</br>
+<h3>So, do you believe what I'll say about my best friend as follows?</h3>
+<button type="button" onclick="myfunction1()">Yes, I believe</button>
+<button type="button" onclick="myfunction2()">Sorry, I don't</button>
+
+<p id="line1"></p>
+<style>
+#bt1 {
+    visibility: hidden;
+}
+</style>
+
+<button type="button" onclick="writedown()" id="bt1">Then click here</button>
+<script type="text/javascript">
+	function writedown(){
+		document.getElementById("Z").style.visibility = 'visible';
+		document.getElementById("Z").innerHTML="Among those friends, the best one is Mr. Z, who is handsome, clever, warm-hearted and ...</br></br>(To be continued...)";
+		document.getElementById("bt2").style.visibility = 'visible';
+		document.getElementById("bt3").style.visibility = 'visible';
+	}
+</script>
+
+<div id="Z"></br></div>
+
+</br>
+<style type="text/css">
+#bt2 {
+    visibility: hidden;
+}
+#bt3 {
+    visibility: hidden;
+}
+</style>
+<button type="button" onclick="pop1()" id="bt2">This is nonsense</button>
+<button type="button" onclick="pop2()" id="bt3">I agree</button>
+
+<script type="text/javascript">
+	function pop1(){
+		window.alert("Never! These are my innermost feelings!")
+	}
+	function pop2(){
+		window.alert("I can't agree more! I'll cherich the memory and value this friendship!")
+	}
+</script>
+
+
+
+
+
+</body>
+</html>
