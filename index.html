@@ -7,50 +7,7 @@
 </head>
 
 <body>
-</style>
 
-</br>
-<center><h1>Welcome Page</h1></center>
-</br>
-
-
-
-      <style type="text/css">
-            #times{
-            	background-image: url(images/sky.jpg);
-                width: 300px;
-                height: 40px;
-                font-size: 20px;
-                text-align: center;
-                line-height: 40px;       
-                border: 3px solid gray;  /*如果不加实线无法显示边框*/
-            }
-        </style>
-    
-    <body>
-        <center><div id="times"></div></center>
-        <script type="text/javascript">
-            //得到时间并写入div
-            function getDate(){
-                //获取当前时间
-                var date = new Date();
-                //格式化为本地时间格式
-                var date1 = date.toLocaleString();
-                //获取div
-                var div1 = document.getElementById("times");
-                //将时间写入div
-                div1.innerHTML = date1;
-            }
-            //使用定时器每秒向div写入当前时间
-            setInterval("getDate()",1000);
-        </script>
-    </body>
-
-
-
-
-
-</br>
 
     <style type="text/css">
 
@@ -118,7 +75,7 @@
 
 	<div class="imgw">
 		<img src="images/cam1.jpg" alt= "cam" width="100%">
-		<div class="words">Welcome Page</div>
+		<div class="words">To follow your heart!</div>
 	</div>
     </body>
 
@@ -128,6 +85,47 @@
 
 </br>
 </br>
+
+</br>
+<center><h1>Welcome Page</h1></center>
+</br>
+
+
+
+      <style type="text/css">
+            #times{
+            	background-image: url(images/sky.jpg);
+                width: 300px;
+                height: 40px;
+                font-size: 20px;
+                text-align: center;
+                line-height: 40px;       
+                border: 3px solid gray;  /*如果不加实线无法显示边框*/
+            }
+        </style>
+    
+    <body>
+        <center><div id="times"></div></center>
+        <script type="text/javascript">
+            //得到时间并写入div
+            function getDate(){
+                //获取当前时间
+                var date = new Date();
+                //格式化为本地时间格式
+                var date1 = date.toLocaleString();
+                //获取div
+                var div1 = document.getElementById("times");
+                //将时间写入div
+                div1.innerHTML = date1;
+            }
+            //使用定时器每秒向div写入当前时间
+            setInterval("getDate()",1000);
+        </script>
+    </body>
+
+
+
+
 </br>
 </br>
 
@@ -195,7 +193,7 @@
             }
         </style>
 
-<div id="time1"></div>
+<center><div id="time1"></div></center>
 <script type="text/javascript">
 	function CurrentTime(){
 		var now = new Date();
