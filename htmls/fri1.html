@@ -16,6 +16,13 @@
 		document.getElementById("bt2").style.visibility = 'hidden';
 		document.getElementById("bt3").style.visibility = 'hidden';
 	}
+	function sbmt(){
+		var a=document.getElementById("name1").value
+		document.getElementById("all").style.visibility = 'visible';
+		document.getElementById("nm1").remove();
+		document.getElementById("sbmtb").remove();
+		document.getElementById("nm2").innerHTML = "Hello!&nbsp&nbsp"+a;
+	}
 </script>
 
 
@@ -24,8 +31,21 @@
 <center><h1>
 Here, I'll introduce my friends.
 </h1></center>
+</br>
+</br>
+<form id="nm1">
+	Please write down your name:<input type="text" id="name1"></br>
+</form>
+<button type="button" onclick="sbmt()" id="sbmtb">Submit</button>
+<div id="nm2"></div>
 
+<style>
+	#all {
+		visibility: hidden;
+	}
+</style>
 
+<div id="all">
 
 <p>Good friends offer to help in a crisis.</p>
 <p>And great friends don't take no for an answer.</p>
@@ -64,6 +84,8 @@ Here, I'll introduce my friends.
 </style>
 <button type="button" onclick="pop1()" id="bt2">This is nonsense</button>
 <button type="button" onclick="pop2()" id="bt3">I agree</button>
+
+</div>
 
 <script type="text/javascript">
 	function pop1(){
