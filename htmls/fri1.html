@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	function myfunction1(){
 		document.getElementById("line1").innerHTML="You can click on the button to see who my friends are.";
-		document.getElementById("bt1").style.visibility = 'visible';
+		document.getElementById("tell").style.visibility = 'visible';
 	}
 	function myfunction2(){
 		document.getElementById("line1").innerHTML="You may choose to believe me.";
@@ -18,12 +18,14 @@
 	}
 	function sbmt(){
 		var a=document.getElementById("name1").value
+		var b=document.createElement(a);
 		document.getElementById("all").style.visibility = 'visible';
 		document.getElementById("nm1").remove();
 		document.getElementById("sbmtb").remove();
-		document.getElementById("nm2").innerHTML = "Hello!&nbsp&nbsp"+a;
+		document.getElementById("nm2").append(a);
 	}
 </script>
+
 
 
 <body>
@@ -32,27 +34,33 @@
 Here, I'll introduce my friends.
 </h1></center>
 </br>
-</br>
 <form id="nm1">
-	Please write down your name:<input type="text" id="name1"></br>
+</br>Please write down your name:<input type="text" id="name1"></br>
 </form>
 <button type="button" onclick="sbmt()" id="sbmtb">Submit</button>
-<div id="nm2"></div>
+
 
 <style>
 	#all {
 		visibility: hidden;
 	}
+	#tell{
+		visibility: hidden;
+	}
 </style>
 
 <div id="all">
+	<style> 
+		div #nm2{ display:inline} 
+		</style> 
+ &nbsp&nbsp Hello!&nbsp<b><div id="nm2"></div></b>
 <p>When I watched American TV series during high school,</br>I was touched by the following sentence:</p>
 <h4><font color=#FA8072><p>"Good friends offer to help in a crisis.
 </br>And great friends don't take no for an answer."</p></font></h4>
-<p>Yes, I felt sympathetic to the characters' attitude in the TV series and resolved on taking this attitude in my own life.</p>
+<p>Yes, I felt sympathetic to the characters' attitude toward friends in the TV series,</br> and resolved on taking this attitude in my own life.</p>
 <p>Now, I want to introduce my friends in this page.</p>
 
-<h3>So, do you believe what I'll say about my best friend as follows?</h3>
+<h3>So, do you believe what I'll say about my friends as follows?</h3>
 <button type="button" onclick="myfunction1()">Yes, I believe</button>
 <button type="button" onclick="myfunction2()">Sorry, I don't</button>
 
@@ -63,17 +71,67 @@ Here, I'll introduce my friends.
 }
 </style>
 
-<button type="button" onclick="writedown()" id="bt1">Then click here</button>
+</br>
+
+<div id="tell">
+<body> 
+	<b>Please choose ONE of the two adjectives in each line which describes you best:</b> </br></br>
+	1. <input type="checkbox" name="test" value="Nice" />Nice 
+	<input type="checkbox" name="test" value="Straightforward" />Straightforward </br>
+	2. <input type="checkbox" name="test" value="Self-motivated" />Self-motivated
+	<input type="checkbox" name="test" value="Brave" />Brave</br>
+	3. <input type="checkbox" name="test" value="Clever" />Clever 
+	<input type="checkbox" name="test" value="Diligent" />Diligent</br>
+	4. <input type="checkbox" name="test" value="Warm-hearted" />Warm-hearted
+	<input type="checkbox" name="test" value="Considerate" />Considerate</br>
+	5. <input type="checkbox" name="test" value="Sincere" />Sincere
+	<input type="checkbox" name="test" value="Well-behaved" />Well-behaved</br></br>
+	<button type="button" onclick="getcont()" id="get1">Choose and submit</button>
+</body> 
+</br></br>
+<div id="uu"></div>
+
+<script type="text/javascript">
+	  function getcont(){ 
+		 var c = document.getElementById("nm2").innerText
+	var obj=document.getElementsByName('test'); //选择所有name="'test'"的对象，返回数组 
+	//取到对象数组后，我们来循环检测它是不是被选中 
+	var s=''; 
+	for(var i=0; i<obj.length ; i++){ 
+		if(obj[i].checked) 
+		s+=obj[i].value+',&nbsp'; //如果选中，将value添加到变量s中 
+	} 
+	//那么现在来检测s的值就知道选中的复选框的值了 
+	if (s==''){
+		alert("No content!");
+	}
+	else{
+		document.getElementById("uu").innerHTML="Dear&nbsp"+c+",</br>" + "You are "+s;
+	    document.getElementById("bt1").style.visibility='visible';
+	}
+} 
+</script>
+</div>
+<style type="text/css">
+	#bt1 { 
+		visibility: hidden;
+	}
+</style>
+<button type="button" onclick="writedown()" id="bt1"><b>So,</b></button>
 <script type="text/javascript">
 	function writedown(){
 		document.getElementById("Z").style.visibility = 'visible';
-		document.getElementById("Z").innerHTML="Among those friends, the best one is Mr. Z, who is handsome, clever, warm-hearted and ...</br></br>(To be continued...)";
+		document.getElementById("Z").innerHTML="why don't you think that you are just my friend?</br>";
 		document.getElementById("bt2").style.visibility = 'visible';
 		document.getElementById("bt3").style.visibility = 'visible';
 	}
 </script>
-
-<div id="Z"></br></div>
+<style type="text/css">
+	div #Z{ 
+		display:inline
+	}
+</style>
+<div id="Z"></div>
 
 </br>
 <style type="text/css">
@@ -99,8 +157,8 @@ Here, I'll introduce my friends.
 </script>
 
 
-
-
+</br>
+</br></br></br></br></br></br></br>
 
 </body>
 </html>
