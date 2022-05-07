@@ -4,255 +4,102 @@
   <meta charset="UTF-8">
   <title>MyDailyRecordings</title>
   <link rel="stylesheet" href="css/style.css">
+
+<style>
+  ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#333;
+  }
+  
+  li{
+    float:left;
+  }
+  
+  li a, .dropbtn
+  {
+    display:inline-block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+  }
+  
+  li a:hover, .dropdown:hover, .dropbtn
+  {
+    background-color:#111;
+  }
+  
+  .dropdown
+  {
+    display:inline-block;
+  }
+  
+  .dropdown-content
+  {
+    display:none;
+    position:absolute;
+    background-color:#f9f9f9;
+    min-width:160px;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a
+  {
+    color:black;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content
+  {
+    display:block;
+  }
+  
+  </style>
+	
 </head>
 
 <body>
 
 
-    <style type="text/css">
-
-    nav{
-		width: 100%;
-		height: 60px;	
-		background: rgba(0,0,0,.3);
-		position: absolute;
-		z-index: 10;
-	}
-	nav ul{
-		list-style: none;
-		margin: 0;
-		padding: 0;
-        display: flex; 
-        justify-content: space-between;
-	}
-	nav ul li{
-		text-align: center;
-		float: left;
-		line-height: 60px;
-		width: 70%;
-	}
-	nav ul li a{
-		width: auto;
-		color: #fff;
-		font-size: 20px;
-		font-weight: 600;
-		display: block;
-		
-	}
-	nav ul li a:hover,nav ul li a:visited{
-		text-decoration: none;
-		background: rgba(0,0,0,.5);
-		color: #fff;
-	}
-
-
-    	.words{
-    		font-size: 33px;
-			letter-spacing: 5px;
-			position: absolute;
-			top:40%;
-			left:40%;
-			font-weight：bolder；
-			font-family:"Times New Roman"；
-		}
-	    .imgw{
-	    	position: relative;
-	    	opacity: 0.7;
-	    	
-	    }
-	    
-
-    </style>
-    <body>
-
-    	<style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        li{
-            list-style: none;
-        }
-        #show {
-            text-align: center;
-            width: auto;
-            height: auto;
-        }
-        #menu{
-        	text-align: center;
-            display: none;
-            margin-left:23%;
-            width: auto;
-            border: 1px solid #ccc;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        #menu a{
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
-
-
-    	<script>
-        window.onload = function(){
-            //获取需要悬浮的对象
-            let show = document.getElementById("show");
-            //获取被隐藏的菜单
-            let menu = document.getElementById("menu");
-            
-	    let show1 = document.getElementById("show1");
-            //获取被隐藏的菜单
-            let menu1 = document.getElementById("menu1");
-		
-	    let show2 = document.getElementById("show2");
-            //获取被隐藏的菜单
-            let menu2 = document.getElementById("menu2");
-		
-		
-            //给show添加鼠标悬浮事件
-            show.onmouseover = function(){
-                //改变菜单的内联样式display为block
-                menu.style.display = "block";
-            }
-		
-            show1.onmouseover = function(){
-                //改变菜单的内联样式display为block
-		menu1.style.display = "block";
-            }
-		
-            show2.onmouseover = function(){
-                //改变菜单的内联样式display为block
-		menu2.style.display = "block";
-            }
-		
-		
-            //
-            show.onmouseout = function(){
-                //获取菜单栏的坐标值
-                let menux = menu.offsetLeft;
-                let menuy = menu.offsetTop;
-                let menuX = menu.offsetLeft+menu.offsetWidth;
-                let menuY = menu.offsetTop+menu.offsetHeight;
-                //获取鼠标的坐标值
-                let event = window.event;
-                let mouseX = event.clientX;
-                let mouseY = event.clientY;
-		
-                if(mouseX<menux || mouseX>menuX || mouseY<menuY || mouseY>menuY){
-                    menu.style.display = "none";
-                }    
-	     }
-		
-	     
-
-	     show1.onmouseout = function(){
-		let menux1 = menu1.offsetLeft;
-                let menuy1 = menu1.offsetTop;
-                let menuX1 = menu1.offsetLeft+menu1.offsetWidth;
-                let menuY1 = menu1.offsetTop+menu1.offsetHeight;
-		let event1 = window.event;
-                let mouseX1 = event1.clientX;
-                let mouseY1 = event1.clientY;
-		
-		if(mouseX1<menux1 || mouseX1>menuX1 || mouseY1<menuY1 || mouseY1>menuY1){
-                    menu1.style.display = "none";
-                }
-	     }
-
-            show2.onmouseout = function(){
-                //获取菜单栏的坐标值
-                let menux2 = menu2.offsetLeft;
-                let menuy2 = menu2.offsetTop;
-                let menuX2 = menu2.offsetLeft+menu2.offsetWidth;
-                let menuY2 = menu2.offsetTop+menu2.offsetHeight;
-                //获取鼠标的坐标值
-                let event2 = window.event;
-                let mouseX2 = event2.clientX;
-                let mouseY2 = event2.clientY;
-		
-                if(mouseX2<menux2 || mouseX2>menuX2 || mouseY2<menuY2 || mouseY2>menuY2){
-                    menu.style.display = "none";
-                }    
-	     }
-		
-            //分别给menu对象绑定鼠标悬浮和鼠标离开事件
-            menu.onmouseover = function(){
-                menu.style.display = "block";    
-            }
-            menu.onmouseleave = function(){
-                menu.style.display = "none";
-            }
-
-            menu1.onmouseover = function(){
-                menu1.style.display = "block";    
-            }
-            menu1.onmouseleave = function(){
-                menu1.style.display = "none";
-            }
-            menu2.onmouseover = function(){
-                menu2.style.display = "block";    
-            }
-            menu2.onmouseleave = function(){
-                menu2.style.display = "none";
-            }
-		
-        }
-		
-
+<nav>
+<ul>
+  <li><a class="active" href="index.html">Home Page</a></li>
+  <li><a href="#news">新闻</a></li>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Some websites</a>
+    <div class="dropdown-content">
+      <a href="htmls/exert1.html">Exert Yourself</a>
+      <a href="htmls/dream1.html">Achieve Dream</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Daily Recordings</a>
+    <div class="dropdown-content">
+      <a href="#">Diaries</a>
+      <a href="#">Resources</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Others</a>
+    <div class="dropdown-content">
+      <a href="htmls/fri1.html">Friends</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <li><a href="https://junyumao1999.github.io/junyumao/">About me</a></li>	
+</ul>
+</nav>
 	
-    </script>
-
-	    
-	    
-    <nav>
-		<ul>
-			<li class="active"><a href="index.html">Home Page</a></li>
-		
-			<li>
-	                  <div id="box">
-                            <div id="show"><a href="#some">Some websites</a></div>
-                              <ul id="menu">
-			        <li><a href="htmls/exert1.html">Exert Yourself</a></li>
-  			        <li><a href="htmls/dream1.html">Achieve Dream</a></li>
-                                <li><a href="#">选项3(under design)</a></li>
-                                <li><a href="#">选项4(under design)</a></li>
-                              </ul>
-		          </div>
-                        </li>
-
-			
-
-			
-			<li>
-	                  <div id="box1">
-                            <div id="show1"><a href="#daily">Daily Recordings</a></div>
-                              <ul id="menu1">
-			        <li><a href="#">Diaries</a></li>
-                   	        <li><a href="#">Resources</a></li>
-               	                <li><a href="#">选项3(under design)</a></li>
-                              </ul>
-		          </div>
-                        </li>
-			
-
-			<li>
-	                  <div id="box2">
-                            <div id="show2"><a href="#">Others</a></div>
-                              <ul id="menu2">
-			        <li><a href="htmls/fri1.html">Friends</a></li>
-                                <li><a href="#">选项二</a></li>
-                                <li><a href="#">选项三</a></li>
-                              </ul>
-		          </div>
-                        </li>
-
-			
-			<li><a href="https://junyumao1999.github.io/junyumao/">About me</a></li>
-		</ul>
-
-
-	</nav>
-
 
 
 	<div class="imgw">
