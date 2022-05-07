@@ -100,6 +100,14 @@
             //获取被隐藏的菜单
             let menu = document.getElementById("menu");
             
+	    let show1 = document.getElementById("show1");
+            //获取被隐藏的菜单
+            let menu1 = document.getElementById("menu1");
+		
+	    let show2 = document.getElementById("show2");
+            //获取被隐藏的菜单
+            let menu2 = document.getElementById("menu2");
+		
 		
             //给show添加鼠标悬浮事件
             show.onmouseover = function(){
@@ -107,7 +115,16 @@
                 menu.style.display = "block";
             }
 		
-           
+            show1.onmouseover = function(){
+                //改变菜单的内联样式display为block
+		menu1.style.display = "block";
+            }
+		
+            show2.onmouseover = function(){
+                //改变菜单的内联样式display为block
+		menu2.style.display = "block";
+            }
+		
 		
             //
             show.onmouseout = function(){
@@ -128,8 +145,35 @@
 		
 	     
 
-	     
+	     show1.onmouseout = function(){
+		let menux1 = menu1.offsetLeft;
+                let menuy1 = menu1.offsetTop;
+                let menuX1 = menu1.offsetLeft+menu1.offsetWidth;
+                let menuY1 = menu1.offsetTop+menu1.offsetHeight;
+		let event = window.event;
+                let mouseX = event.clientX;
+                let mouseY = event.clientY;
+		
+		if(mouseX<menux1 || mouseX>menuX1 || mouseY<menuY1 || mouseY>menuY1){
+                    menu1.style.display = "none";
+                }
+	     }
 
+            show2.onmouseout = function(){
+                //获取菜单栏的坐标值
+                let menux2 = menu2.offsetLeft;
+                let menuy2 = menu2.offsetTop;
+                let menuX2 = menu2.offsetLeft+menu2.offsetWidth;
+                let menuY2 = menu2.offsetTop+menu2.offsetHeight;
+                //获取鼠标的坐标值
+                let event = window.event;
+                let mouseX = event.clientX;
+                let mouseY = event.clientY;
+		
+                if(mouseX<menux2 || mouseX>menuX2 || mouseY<menuY2 || mouseY>menuY2){
+                    menu.style.display = "none";
+                }    
+	     }
 		
             //分别给menu对象绑定鼠标悬浮和鼠标离开事件
             menu.onmouseover = function(){
@@ -139,7 +183,18 @@
                 menu.style.display = "none";
             }
 
-            
+            menu1.onmouseover = function(){
+                menu1.style.display = "block";    
+            }
+            menu1.onmouseleave = function(){
+                menu1.style.display = "none";
+            }
+            menu2.onmouseover = function(){
+                menu2.style.display = "block";    
+            }
+            menu2.onmouseleave = function(){
+                menu2.style.display = "none";
+            }
 		
         }
 		
