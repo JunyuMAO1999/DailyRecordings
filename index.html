@@ -150,11 +150,11 @@
                 let menuy1 = menu1.offsetTop;
                 let menuX1 = menu1.offsetLeft+menu1.offsetWidth;
                 let menuY1 = menu1.offsetTop+menu1.offsetHeight;
-		let event = window.event;
-                let mouseX = event.clientX;
-                let mouseY = event.clientY;
+		let event1 = window.event;
+                let mouseX1 = event1.clientX;
+                let mouseY1 = event1.clientY;
 		
-		if(mouseX<menux1 || mouseX>menuX1 || mouseY<menuY1 || mouseY>menuY1){
+		if(mouseX1<menux1 || mouseX1>menuX1 || mouseY1<menuY1 || mouseY1>menuY1){
                     menu1.style.display = "none";
                 }
 	     }
@@ -166,11 +166,11 @@
                 let menuX2 = menu2.offsetLeft+menu2.offsetWidth;
                 let menuY2 = menu2.offsetTop+menu2.offsetHeight;
                 //获取鼠标的坐标值
-                let event = window.event;
-                let mouseX = event.clientX;
-                let mouseY = event.clientY;
+                let event2 = window.event;
+                let mouseX2 = event2.clientX;
+                let mouseY2 = event2.clientY;
 		
-                if(mouseX<menux2 || mouseX>menuX2 || mouseY<menuY2 || mouseY>menuY2){
+                if(mouseX2<menux2 || mouseX2>menuX2 || mouseY2<menuY2 || mouseY2>menuY2){
                     menu.style.display = "none";
                 }    
 	     }
